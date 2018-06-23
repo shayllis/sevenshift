@@ -1,0 +1,11 @@
+@import "../plugins/bootstrap/assets/stylesheets/_bootstrap.scss";
+
+$fa-font-path: '/plugins/font-awesome/fonts';
+
+@import "../plugins/font-awesome/scss/font-awesome.scss";
+@import "../plugins/dataTable/css/dataTable.min.css";
+// Custom
+
+.no-padding {
+	padding: 0 !important;
+}

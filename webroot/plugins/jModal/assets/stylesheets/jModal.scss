@@ -1,0 +1,159 @@
+@import "variables";
+
+.jmodal {
+  position: relative;
+  background-color: $jm-window-bg;
+
+  color: $jm-color;
+  font-size: $jm-font-size;
+  text-align: left;/*2.0*/
+
+  border: $jm-border;
+  border-radius: $jm-border-radius;
+
+  display: inline-block;
+  margin: auto;
+
+	-webkit-animation: slideDown 0.45s; /* Safari, Chrome and Opera > 12.1 */
+		 -moz-animation: slideDown 0.45s; /* Firefox < 16 */
+			-ms-animation: slideDown 0.45s; /* Internet Explorer */
+			 -o-animation: slideDown 0.45s; /* Opera < 12.1 */
+					animation: slideDown 0.45s;
+
+  // Scrollable content
+  &-body-scroll {
+    overflow-y: hidden;
+  }
+
+  // Background
+  &-wrapper {
+    position: fixed;
+    background: $jm-wrapper-bg;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+    text-align: center;/*2.0*/
+    z-index: $jm-zindex;
+
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    -webkit-animation: fadein 0.3s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 0.3s; /* Firefox < 16 */
+        -ms-animation: fadein 0.3s; /* Internet Explorer */
+         -o-animation: fadein 0.3s; /* Opera < 12.1 */
+            animation: fadein 0.3s;
+  }
+
+
+  // Responsive window
+  &.responsive {
+    display: block;
+		max-width: 100%;
+		max-height: 100%;
+
+    > .jmodal-content {
+			width: 100%;
+      display: inline-block;
+    }
+  }
+
+  // Close button
+  > .btn-close {
+    background-color: $jm-btn-close-bg;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 26px;
+
+    width: $jm-btn-close-width;
+    height: $jm-btn-close-height;
+    padding: 0;
+    margin: -$jm-btn-close-height/2;
+    border: none;
+    color: $jm-btn-close-color;
+    line-height: $jm-btn-close-height;
+    text-align: center;
+    display: block;
+    z-index: 1;
+
+    &:hover{
+      background-color: darken($jm-btn-close-bg, 20%);
+    }
+  }
+
+  /* Firefox < 16 */
+  @-moz-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+  /* Internet Explorer */
+  @-ms-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+  /* Opera < 12.1 */
+  @-o-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+	// Slide Down
+	@-moz-keyframes slideDown {
+      from { top: -40%; }
+      to   { top: 0%; }
+  }
+
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes slideDown {
+      from { top: -40%; }
+      to   { top: 0%; }
+  }
+
+  /* Internet Explorer */
+  @-ms-keyframes slideDown {
+      from { top: -40%; }
+      to   { top: 0%; }
+  }
+
+  /* Opera < 12.1 */
+  @-o-keyframes slideDown {
+      from { top: -40%; }
+      to   { top: 0%; }
+  }
+
+  // Default btn controllers
+  > .btns {
+    background-color: #efefef;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+
+    text-align: center;
+
+    border-top: 1px solid #ccc;
+    border-radius: 0 0 $jm-border-radius $jm-border-radius;
+    display: block;
+
+		.btn {
+			margin: 0 15px;
+		}
+  }
+
+  &-content {
+    padding: 25px;
+    display: block;
+  }
+}
